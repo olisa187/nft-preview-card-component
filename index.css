@@ -1,0 +1,149 @@
+:root{
+	box-sizing: border-box;
+	
+	/* font-size */
+	--fw-300: 300;
+	--fw-400: 400;
+	--fw-600: 600;
+	
+	/* colors */
+	/* ### Primary */
+
+	--clr-Soft-blue: hsl(215, 51%, 70%);
+	--clr-Cyan: hsl(178, 100%, 50%);
+
+	/* ### Neutral */
+	--clr-Very-dark-blue-body: hsl(217, 54%, 11%);
+	--clr-Very-dark-blue-card: hsl(216, 50%, 16%);
+	--clr-Very-dark-blue-line: hsl(215, 32%, 27%);
+	--clr-White: hsl(0, 0%, 100%);
+}
+
+
+*,
+*::before,
+*::after{
+	box-sizing: inherit;
+	padding: 0;
+	margin: 0;
+}
+
+img,
+image,
+picture{
+	max-width: 100%
+}
+a {
+	text-decoration: none;
+	cursor: pointer;
+	color: inherit;
+}
+
+a:hover,
+.card__creator a:hover{
+	color: var(--clr-Cyan)
+}
+body{
+	font-family: 'Outfit', sans-serif;
+	font-size: 18px;
+	background-color: var(--clr-Very-dark-blue-body);
+	color: var(--clr-Soft-blue);
+}
+
+main{
+	max-width: 90em;
+	margin: 0 auto;
+}
+
+.card{
+	max-width: 20em;
+	margin: 3em auto 1em;
+	padding: 1.2em;
+	background-color: var(--clr-Very-dark-blue-card);
+	border-radius: 1em;
+	box-shadow: 5px 40px 20px 10px hsla(0, 0%, 0%, .25);
+}
+.card > a{
+	display: block;
+}
+.card > a > .card_image{
+	border-radius: .7em;
+	overflow: hidden;
+	position: relative;
+}
+
+
+.card > a:hover .card_image:before{
+	content: "";
+	background: var(--clr-Cyan);
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	filter: blur(120px);
+}
+.card > a:hover .card_image:after{
+	content: "";
+	background: url("images/icon-view.svg") no-repeat center center;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+}
+
+.card > .card_content > *:not(*:last-child){
+	margin-top: 1.8em;
+}
+
+.card > .card_content h2{
+	color: var(--clr-White);
+	font-size: 20px;
+}
+
+.card > .card_content > .card_crypto {
+	display: flex;
+	border-bottom: 1px solid var(--clr-Soft-blue);
+	padding-bottom: 1.5em;
+}
+.card > .card_content > .card_crypto > #crypto{
+	color: var(--clr-Cyan);
+}
+.card > .card_content > .card_crypto > #days{
+	margin-left: auto;
+}
+
+.crypto_promotion{
+	display: flex;
+	align-items: center;
+	gap: 7px;
+	
+}
+
+.card__creator{
+	display: flex;
+	align-items: center;
+	gap: 1em;
+	padding-bottom: .5em;
+	margin-top: 1em;
+	
+}
+
+.card__creator > div:first-child{
+	max-width: 2em;
+	border: 2px solid var(--clr-White);
+	border-radius: 50%;
+}
+
+.card__creator a{
+	color: var(--clr-White);
+}
+
+.attribution { 
+	font-size: 11px; text-align: center; 
+	padding-bottom: 2em;
+}
+.attribution a { 
+	color: hsl(228, 45%, 44%); 
+}
